@@ -1,0 +1,2 @@
+insert into tblstudent values(001,'Parth','Mohan','Patel','Surat','Gujarat','India','25/06/1991','Male',101256,'CO',2006);
+

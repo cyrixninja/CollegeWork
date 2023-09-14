@@ -1,0 +1,13 @@
+create table tblstudent(studentID bigint primary key,fName varchar(30) NOT NULL, mName char(20),iName char(10),address varchar(100),area varchar(20),city varchar(30),state varchar(20),country varchar(20),pincode bigint,phoneno bigint(10),birthdate varchar(20),gender  varchar(30),regno bigint,branchid varchar(15),admyear bigint,emailid varchar(30));
+create table tblBranch(branchID varchar(20) primary key,branchName varchar(20) NOT NULL,building varchar(30),other varchar (30));
+create table tblSubject(subjectID varchar(30) primary key,subname varchar(30) NOT NULL,thHours varchar(20),tuHours varchar(20),prhours varchar(20),credit varchar(20));
+create table tblFaculty(factID varchar(30) primary key,fName varchar(30),mName varchar(15),address varchar(20),area varchar(15),city varchar(10),state varchar(20),country varchar(10), pincode bigint,phoneNo int(10),emailID varchar(20),joinDate varchar(20),gender varchar(20) NOT NULL,qualification varchar(20),designation varchar(30), deptID varchar(20) NOT NULL,addDuties varchar(50));
+ create table tblstudent(studentID bigint primary key,fName varchar(30) NOT NULL, mName char(20),iName char(10),address varchar(100),area varchar(20),city varchar(30),state varchar(20),country varchar(20),pincode bigint,phoneno bigint(10),birthdate varchar(20),gender  varchar(30),regno bigint,branchid varchar(15),admyear bigint,emailid varchar(30));
+create table tblCourse(courseID varchar(20) primary key,subID varchar(20) NOT NULL,facID varchar(20) NOT NULL ,semester varchar(10) NOT NULL,branchId varchar(20));
+create table tblStudentCourse(stuCouID varchar(20) primary key,stuID varchar(20) NOT NULL,courseid varchar(20) NOT NULL,month int(2),year int(4));
+ create table tblStudentResult(ID bigint(20),stuCouID varchar(20) NOT NULL,creditObtained varchar(20)  NOT NULL ,iscleared char(20),yearApp int(4));
+ create table tblOneTimeFees(ID bigint(20),stuCouID varchar(20) NOT NULL,particular varchar(50),amount bigint(10),dateSub varchar(10),isRefundable varchar(8));
+ create table tblTutionFees(ID bigint(20) primary key,stuID varchar(20) NOT NULL,semester varchar(10),Amount bigint(10),dateSub bigint(8));
+ create table tblExamFee(ID bigint(20) primary key,stuID varchar(20) NOT NULL,couID  varchar(10) NOT NULL,Amount bigint(10),dateSub bigint(8));
+ 
+ 

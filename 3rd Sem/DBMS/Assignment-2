@@ -37,6 +37,18 @@ VALUES
     ('ss601', 'Surveying & Levelling', 2, 1, 1, 3),
     ('Ss702', 'Engineering Chemistry', 2, 0, 2, 2);
 
+//tblFaculty
+INSERT INTO tblSubjec (facID, fName, mName, lName, city, state, country, joinDate, gender, Qualification, Designation, deptID, addDuties)
+VALUES
+    ('f101', 'Chetan', 'K', 'Solanki','Gandhi Road','Adajan', 'Surat', 'Gujarat', 'India','395001','7031234567','chetan@gmail.com','2004-07-21', 'M', 'BE(Computer)', 'Lecturer', 'CO', 'Proxy Administrator'),
+    ('f302', 'Milind',NULL, 'Trivedi','Main Street','Vasna Road', 'Baroda', 'Gujarat', 'India','395002','7599876543','milind@gmail.com','2005-11-22', 'M', 'BE(Electrical)', 'Lecturer', 'EL', 'Embedded Lab In Charge'),
+    ('f203', 'Vijayendra', 'A', 'Desai','Park Avenue','Vesu', 'Surat', 'Gujarat', 'India','395003','7774567890','vijayendra@gmail.com','2005-01-25', 'M', 'ME(EC)', 'Lecturer', 'EC', 'T & P(EC) In Charge'),
+    ('f705', 'Kalpesh', 'D', 'Mania','Market Street','Jubilee Garden', 'Rajkot', 'Gujarat', 'India','395004','7312345678','kalpesh@gmail.com','2002-03-02', 'M', 'ME(Mechanical)', 'Lecturer', 'ME', 'Examination Coordinator'),
+    ('f801', 'Mitesh',NULL, 'Joshi','Hill Road','Varachha', 'Surat', 'Gujarat', 'India','395005','7448901234','mitesh@gmail.com','2000-04-30', 'M', 'MSc(Maths)', 'Lecturer', 'AP', 'Sports Committee In Charge'),
+    ('f811', 'Deepa',NULL, 'Kapoor','Botanical Garden Road','Piplod', 'Surat', 'Gujarat', 'India','395006','7983456789','deepa@gmail.com','1999-05-06', 'F', 'PhD, MSc(Physics)', 'Assistant Professor', 'AP', 'Physics Lab In Charge'),
+    ('f605', 'Arun',NULL, 'Bharoniya','City Light Road','Palanpur', 'Surat', 'Gujarat', 'India','395007','7866789012','arun@gmail.com','2000-10-11', 'M', 'ME(Civil)', 'Lecturer', 'CI', 'Main Lab In Charge');
+
+
 //tblCourse
 
 INSERT INTO tblCourse (courseID, subjectID, facID, Semester, branchID)

@@ -1,0 +1,14 @@
+// tblStudent 
+
+INSERT INTO tblStudent (ID, fName, mName, lName,address,area, city, state, country, birthDate, gender, regNo, branchID, admYear)
+VALUES
+    ('001', 'Parth', 'Mohan', 'Patel', 'L-98 Area XYZ','Adajan','Surat', 'Gujarat', 'India', '1991-06-25', 'Male', '101256', 'CO', '2006'),
+    ('002', 'Mayur', 'Sahil', 'Rathod', 'U-64 Area ABC W','City Centre','Baroda', 'Gujarat', 'India', '1990-08-24', 'Male', '101289', 'CO', '2006'),
+    ('003', 'Ronak', 'Ramesh', 'Panchal','O-878 ABCD','City Hub', 'Pune', 'Maharashtra', 'India', '1990-04-11', 'Male', '205168', 'CI', '2005'),
+    ('004', 'Chirag', 'Hasmukh', 'Mor','I-908 Main Society','Riverfront', 'Ahmedabad', 'Gujarat', 'India', '1991-08-15', 'Male', '200589', 'ME', '2005'),
+    ('005', 'Prachi', 'Divesh', 'Dhimmar','B 604 Area 64','Thane', 'Mumbai', 'Maharashtra', 'India', '1989-07-14', 'Female', '105456', 'EC', '2004'),
+    ('006', 'Hetvi', 'Rahul', 'Kumar','L-538 QYW','City Centre', 'Baroda', 'Gujarat', 'India', '1989-08-18', 'Female', '104565', 'EC', '2004'),
+    ('007', 'Vipul', 'Mahesh', 'Patil','P64 Area 2','Mango Place', 'Nasik', 'Maharashtra', 'India', '1988-08-15', 'Male', '200554', 'ME', '2005'),
+    ('008', 'Vikas', 'Narottam', 'Ojha','OP 987 ABC Road','Fort Area', 'Rajkot', 'Gujarat', 'India', '1989-12-21', 'Male', '200458', 'EL', '2005'),
+    ('009', 'Atula', 'Anil', 'Avasthi','U 98 FG Road','Hanuman Mandir Area', 'Bhavnagar', 'Gujarat', 'India', '1990-06-05', 'Female', '101054', 'CO', '2006'),
+    ('010', 'Mayuri', 'Rajnish', 'Ravat','MN 64 Rander Road','Rander', 'Surat', 'Gujarat', 'India', '1989-02-28', 'Female', '201024', 'EC', '2004');

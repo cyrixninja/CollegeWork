@@ -1,28 +1,98 @@
 # Solutions 
 
-### Query 5
-
-Query 5: Display all the student IDs and faculty IDs who live in the same city.
+### 1. Select first names & last names of all the students, along with aliases.
 ```
-SELECT s.studentID, f.factID FROM tblStudent s, tblFaculty f WHERE s.city = f.city;
-```
-
-### Query 10
-
-Query 10: Display all the 2nd year Student Names and credits obtained by them for all the students with the 'Pass' status.
-
-```
-SELECT s.fName, s.iName, sr.creditObtained
-FROM tblStudent s
-JOIN tblStudentCourse sc ON s.studentID = sc.stuID
-JOIN tblStudentResult sr ON sc.stuCouID = sr.stuCouID
-WHERE sc.year = 2 AND sr.iscleared = 'Pass';
+SELECT 
+    fName AS First_Name, 
+    lName AS Last_Name, 
+    CONCAT(fName, ', ', lName) AS Full_Name 
+FROM tblStudent;
 ```
 
-### Query 11
-
-Query 11: Count the average years of experience for all the faculties.
+### 2. Display the city names of all the students.
 
 ```
-SELECT AVG(YEAR(NOW()) - YEAR(STR_TO_DATE(joinDate, '%d-%m-%Y'))) AS AverageExperience FROM tblFaculty;
+SELECT DISTINCT city AS City_Name
+FROM tblStudent;
+```
+
+### 3.Display the names and birth dates of students whose names start with 'M' or 'P'.
+
+```
+SELECT 
+    CONCAT(fName, ' ', lName) AS Full_Name, 
+    birthdate AS Birthdate 
+FROM tblStudent
+WHERE fName LIKE 'M%' OR fName LIKE 'P%';
+
+```
+
+### 4. Display the student IDs of students from 'Maharashtra'.
+
+```
+SELECT stuID 
+FROM tblStudent
+WHERE state = 'Maharashtra';
+
+```
+
+### 5.Display the first and last names of students aged 20 or older.
+```
+SELECT 
+    fName AS First_Name, 
+    lName AS Last_Name 
+FROM tblStudent
+WHERE TIMESTAMPDIFF(YEAR, STR_TO_DATE(birthdate, '%Y-%m-%d'), CURDATE()) >= 20;
+```
+
+### 6.Display male student first names, last names, and year of admission from 'Surat'.
+```
+SELECT 
+    fName AS First_Name, 
+    lName AS Last_Name, 
+    admyear AS Admission_Year
+FROM tblStudent
+WHERE gender = 'Male' AND city = 'Surat';
+```
+
+### 7. Display the student IDs and branch names of all the students.
+```
+SELECT 
+    stuID AS Student_ID, 
+    branchName AS Branch_Name
+FROM tblStudent
+JOIN tblBranch ON tblStudent.branchID = tblBranch.branchID;
+```
+### 8. Display the first and last names of all the students who belong to D1 building.
+```
+SELECT 
+    fName AS First_Name, 
+    lName AS Last_Name
+FROM tblStudent
+JOIN tblBranch ON tblStudent.branchID = tblBranch.branchID
+WHERE tblBranch.building = 'D1';
+```
+### 9.  Display all the student IDs and registration numbers that are registered for more than 4 years.
+```SELECT 
+    stuID AS Student_ID, 
+    regno AS Registration_Number
+FROM tblStudent
+WHERE DATEDIFF(CURDATE(), STR_TO_DATE(admyear, '%Y')) > 4;
+```
+### 10. Display the entire faculty first and last names that belong to D1 building.
+```
+SELECT 
+    fName AS First_Name, 
+    lName AS Last_Name
+FROM tblFaculty
+JOIN tblBranch ON tblFaculty.deptID = tblBranch.branchID
+WHERE tblBranch.building = 'D1';
+```
+### 11. Display all the student IDs and cities in the descending order of their year of admission.
+```
+SELECT 
+    stuID AS Student_ID, 
+    city AS City_Name
+FROM tblStudent
+ORDER BY admyear DESC;
 ```

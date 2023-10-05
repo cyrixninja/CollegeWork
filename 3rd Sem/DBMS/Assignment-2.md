@@ -2,8 +2,7 @@
 
 ### tblStudent
 ```
-INSERT INTO tblStudent (stuID, fName, mName, lName,address,area, city, state, country, birthdate, gender, regno, branchID, admyear,emailid)
-VALUES ('001', 'Parth', 'Mohan', 'Patel', 'L-98 Area XYZ','Adajan','Surat', 'Gujarat', 'India', '1991-06-25', 'Male', '101256', 'CO', '2006','parth@gmail.com'),
+INSERT INTO tblStudent (stuID, fName, mName, lName,address,area, city, state, country, birthdate, gender, regno, branchID, admyear,emailid) VALUES ('001', 'Parth', 'Mohan', 'Patel', 'L-98 Area XYZ','Adajan','Surat', 'Gujarat', 'India', '1991-06-25', 'Male', '101256', 'CO', '2006','parth@gmail.com'),
 ('002', 'Mayur', 'Sahil', 'Rathod', 'U-64 Area ABC W','City Centre','Baroda', 'Gujarat', 'India', '1990-08-24', 'Male', '101289', 'CO', '2006','mayur@gmail.com'),
 ('003', 'Ronak', 'Ramesh', 'Panchal','O-878 ABCD','City Hub', 'Pune', 'Maharashtra', 'India', '1990-04-11', 'Male', '205168', 'CI', '2005','ronak@gmail.com'),
 ('004', 'Chirag', 'Hasmukh', 'Mor','I-908 Main Society','Riverfront', 'Ahmedabad', 'Gujarat', 'India', '1991-08-15', 'Male', '200589', 'ME', '2005','chirag@gmail.com'),
@@ -17,8 +16,7 @@ VALUES ('001', 'Parth', 'Mohan', 'Patel', 'L-98 Area XYZ','Adajan','Surat', 'Guj
 
 ### tblBranch
 ```
-INSERT INTO tblBranch (branchID, branchName, building, other) VALUES
-('CO', 'Computer', 'D1', 'First building after Admin. Building'),
+INSERT INTO tblBranch (branchID, branchName, building, other) VALUES('CO', 'Computer', 'D1', 'First building after Admin. Building'),
 ('EC', 'Electronics & Communication', 'D2', 'Next to D1'),
 ('EL', 'Electrical', 'D3', 'Opposite Site Office'),
 ('ME', 'Mechanical', 'D7', 'Next to D6'),

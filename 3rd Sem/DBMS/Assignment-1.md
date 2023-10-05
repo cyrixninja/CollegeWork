@@ -64,7 +64,7 @@ CREATE TABLE tblFaculty (
 ```
 CREATE TABLE tblCourse (
     courseID varchar(20) PRIMARY KEY,
-    subID varchar(20) NOT NULL,
+    subjectID varchar(20) NOT NULL,
     facID varchar(20) NOT NULL,
     semester varchar(10) NOT NULL,
     branchID varchar(20)
@@ -91,7 +91,7 @@ CREATE TABLE tblStudentResult (
 ```
 CREATE TABLE tblOneTimeFees (
     ID varchar(8),
-    stuCouID int(3) NOT NULL,
+    stuID int(3) NOT NULL,
     particular varchar(50),
     amount bigint(6),
     dateSub varchar(10),

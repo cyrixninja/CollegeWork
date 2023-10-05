@@ -49,7 +49,7 @@ INSERT INTO tblFaculty (facID, fName, mName,lName,address,area, city, state, cou
 
 ### tblCourse
 ```
-INSERT INTO tblCourse (courseID, subjectID, facID, semester, branchID) VALUES ('c001', 'ss101', 'f101', 7, 'CO'),
+INSERT INTO tblCourse (courseID, subID, facID, semester, branchID) VALUES ('c001', 'ss101', 'f101', 7, 'CO'),
 ('c002', 'ss201', 'f203', 4, 'EC'),
 ('c003', 'ss202', 'f203', 4, 'EC'),
 ('c004', 'ss301', 'f302', 5, 'EL'),

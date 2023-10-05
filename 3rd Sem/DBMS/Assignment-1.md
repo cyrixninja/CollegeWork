@@ -99,7 +99,7 @@ CREATE TABLE tblOneTimeFees (
 );
 ```
 ```
-CREATE TABLE tblTutionFees (
+CREATE TABLE tblTuitionFees (
     ID varchar(8) PRIMARY KEY,
     stuID varchar(20) NOT NULL,
     semester int(1),

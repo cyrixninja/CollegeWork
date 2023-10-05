@@ -25,10 +25,9 @@ CREATE TABLE tblStudent (
 ```
 CREATE TABLE tblBranch (
     branchID varchar(20) PRIMARY KEY,
-    branchName varchar(20) NOT NULL,
+    branchName varchar(50) NOT NULL,
     building varchar(30),
-    other varchar(30)
-);
+    other varchar(100));
 ```
 ```
 CREATE TABLE tblSubject (

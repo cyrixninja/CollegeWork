@@ -45,7 +45,7 @@ CREATE TABLE tblFaculty (
     fName varchar(30),
     mName varchar(15),
     lName varchar(15),
-    address varchar(20),
+    address varchar(70),
     area varchar(15),
     city varchar(10),
     state varchar(20),

@@ -8,7 +8,7 @@ INSERT INTO tblStudent (stuID, fName, mName, lName,address,area, city, state, co
 ('004', 'Chirag', 'Hasmukh', 'Mor','I-908 Main Society','Riverfront', 'Ahmedabad', 'Gujarat', 'India', '1991-08-15', 'Male', '200589', 'ME', '2005','chirag@gmail.com'),
 ('005', 'Prachi', 'Divesh', 'Dhimmar','B 604 Area 64','Thane', 'Mumbai', 'Maharashtra', 'India', '1989-07-14', 'Female', '105456', 'EC', '2004','prachi@gmail.com'),
 ('006', 'Hetvi', 'Rahul', 'Kumar','L-538 QYW','City Centre', 'Baroda', 'Gujarat', 'India', '1989-08-18', 'Female', '104565', 'EC', '2004','hetvi@gmail.com'),
-('007', 'Vipul', 'Mahesh', 'Patil','P64 Area 2','Mango Place', 'Nasik', 'Maharashtra', 'India', '1988-08-15', 'Male', '200554', 'ME', '2005,'vipul@gmail.com'),
+('007', 'Vipul', 'Mahesh', 'Patil','P64 Area 2','Mango Place', 'Nasik', 'Maharashtra', 'India', '1988-08-15', 'Male', '200554', 'ME', '2005','vipul@gmail.com'),
 ('008', 'Vikas', 'Narottam', 'Ojha','OP 987 ABC Road','Fort Area', 'Rajkot', 'Gujarat', 'India', '1989-12-21', 'Male', '200458', 'EL', '2005','vikas@gmail.com'),
 ('009', 'Atula', 'Anil', 'Avasthi','U 98 FG Road','Hanuman Mandir Area', 'Bhavnagar', 'Gujarat', 'India', '1990-06-05', 'Female', '101054', 'CO', '2006','atula@gmail.com'),
 ('010', 'Mayuri', 'Rajnish', 'Ravat','MN 64 Rander Road','Rander', 'Surat', 'Gujarat', 'India', '1989-02-28', 'Female', '201024', 'EC', '2004','mayuri@gmail.com');

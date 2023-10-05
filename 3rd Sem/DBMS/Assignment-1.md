@@ -5,7 +5,7 @@ CREATE TABLE tblStudent (
     stuID int(3) PRIMARY KEY,
     fName varchar(30) NOT NULL,
     mName char(20),
-    iName char(10),
+    lName char(10),
     address varchar(100),
     area varchar(20),
     city varchar(30),

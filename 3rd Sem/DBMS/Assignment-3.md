@@ -73,7 +73,8 @@ JOIN tblBranch ON tblStudent.branchID = tblBranch.branchID
 WHERE tblBranch.building = 'D1';
 ```
 ### 9.  Display all the student IDs and registration numbers that are registered for more than 4 years.
-```SELECT 
+```
+SELECT 
     stuID AS Student_ID, 
     regno AS Registration_Number
 FROM tblStudent

@@ -74,11 +74,9 @@ WHERE tblBranch.building = 'D1';
 ```
 ### 9.  Display all the student IDs and registration numbers that are registered for more than 4 years.
 ```
-SELECT 
-    stuID AS Student_ID, 
-    regno AS Registration_Number
+SELECT stuID, regno, admyear
 FROM tblStudent
-WHERE DATEDIFF(CURDATE(), STR_TO_DATE(admyear, '%Y')) > 4;
+WHERE YEAR(CURDATE()) - admyear > 4;
 ```
 ### 10. Display the entire faculty first and last names that belong to D1 building.
 ```

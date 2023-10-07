@@ -2,7 +2,10 @@
 
 ### 1. Display the total number of students and the department name for every department.
 ```
-
+SELECT b.branchName AS Department, COUNT(s.stuID) AS TotalStudents
+FROM tblBranch b
+LEFT JOIN tblStudent s ON b.branchID = s.branchID
+GROUP BY b.branchName;
 ```
 
 ### 2. Find and display the branch name with the maximum students enrolled to it.

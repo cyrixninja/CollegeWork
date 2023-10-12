@@ -76,16 +76,16 @@ INSERT INTO tblStudentCourse (stuCouID, stuID, courseID, month, year) VALUES ('S
 
 ### tblStudentResult
 ```
-INSERT INTO tblStudentResult (ID, stuCouID, creditObtained, isCleared, yearApp) VALUES ('r01', 'Sc101', 2, 'Y', 2009),
-('r02', 'Sc202', 3, 'Y', 2007),
-('r03', 'Sc203', 1, 'N', 2007),
-('r04', 'Sc304', 1, 'Y', 2008),
-('r05', 'Sc705', 1, 'N', 2006),
-('r06', 'Sc606', 2, 'Y', 2006),
-('r07', 'Sc817', 1, 'N', 2005),
-('r08', 'Sc807', 2, 'Y', 2006),
-('r09', 'Sc710', 1, 'N', 2007),
-('r10', 'Sc205', 3, 'Y', 2006);
+INSERT INTO tblStudentResult (ID, stuCouID, creditObtained, isCleared, yearApp) VALUES ('1', 'Sc101', 2, 'Y', 2009),
+('2', 'Sc202', 3, 'Y', 2007),
+('3', 'Sc203', 1, 'N', 2007),
+('4', 'Sc304', 1, 'Y', 2008),
+('5', 'Sc705', 1, 'N', 2006),
+('6', 'Sc606', 2, 'Y', 2006),
+('7', 'Sc817', 1, 'N', 2005),
+('8', 'Sc807', 2, 'Y', 2006),
+('9', 'Sc710', 1, 'N', 2007),
+('10', 'Sc205', 3, 'Y', 2006);
 
 ```
 

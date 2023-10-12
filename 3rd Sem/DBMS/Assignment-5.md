@@ -36,7 +36,11 @@ LIMIT 3;
 
 ### 5. Display all the student names and their credit percentile. (Credit Percentile = (credit Obtained/Maximum Credit)*100)
 ```
-
+SELECT 
+    CONCAT(fName,' ',lName) AS Student_Name,
+    (creditObtained/5)*100 AS Credit_Percentile
+FROM tblStudent s 
+JOIN tblStudentResult r ON s.StuID = r.ID;
 ```
 
 ### 6. Display all Student Names and their Exam Fees Submission Dates who are having their Exam Fees Submission Dates prior to that of ‘Atula Avasthi’

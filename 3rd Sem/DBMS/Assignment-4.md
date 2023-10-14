@@ -76,17 +76,14 @@ WHERE c.semester IN (1, 2);
 ```
 ### 9. Display total fees for all the ‘Computer’ branch students.
 ```
-SELECT s.stuID, s.fName, s.lName, 
-       IFNULL(SUM(otf.amount), 0) AS OneTimeFeesTotal,
-       IFNULL(SUM(ttf.amount), 0) AS TuitionFeesTotal,
-       IFNULL(SUM(ef.amount), 0) AS ExamFeesTotal,
-       IFNULL(SUM(otf.amount), 0) + IFNULL(SUM(ttf.amount), 0) + IFNULL(SUM(ef.amount), 0) AS TotalFees
-FROM tblStudent s
-LEFT JOIN tblOneTimeFees otf ON s.stuID = otf.stuID
-LEFT JOIN tblTuitionFees ttf ON s.stuID = ttf.stuID
-LEFT JOIN tblExamFee ef ON s.stuID = ef.stuID
+SELECT s.stuID, s.fName, s.lName, s.branchID, SUM(otf.amount + tf.amount + ef.amount) AS total_fees
+FROM tblStudent AS s
+LEFT JOIN tblOneTimeFees AS otf ON s.stuID = otf.stuID
+LEFT JOIN tblTuitionFees AS tf ON s.stuID = tf.stuID
+LEFT JOIN tblExamFee AS ef ON s.stuID = ef.stuID
 WHERE s.branchID = 'CO'
-GROUP BY s.stuID, s.fName, s.lName;
+GROUP BY s.stuID
+ORDER BY s.stuID;
 ```
 ### 10. Display all the 2nd year Student Names and credits obtained by them for all the students with the ‘Pass’ status.
 ```

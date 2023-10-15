@@ -2,7 +2,12 @@
 
 ### 1. Display all Student and Faculty IDs(Use Alias to display a common column name) along with their names.
 ```
-SELECT stu.stuID AS StudentID, fac.facID AS FacultyID, stu.fName AS StudentFirstName, stu.lName AS StudentLastName, fac.fName AS FacultyFirstName, fac.lName AS FacultyLastName
+SELECT stu.stuID AS StudentID,
+fac.facID AS FacultyID,
+stu.fName AS StudentFirstName,
+stu.lName AS StudentLastName,
+fac.fName AS FacultyFirstName,
+fac.lName AS FacultyLastName
 FROM tblStudent stu
 JOIN tblFaculty fac ON stu.branchID = fac.deptID;
 ```

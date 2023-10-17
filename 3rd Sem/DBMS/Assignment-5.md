@@ -32,8 +32,7 @@ WHERE credit > (SELECT credit FROM tblSubject WHERE subname = 'Maths – III');
 ### 4. Display first three Subject IDs, Names and study hours in the decreasing order of the Study Hours (Theory + Practical + Tutorial). (Top N Analysis)
 
 ```
-SELECT subjectID, subname, 
-       CAST(thHours AS UNSIGNED) + CAST(tuHours AS UNSIGNED) + CAST(prHours AS UNSIGNED) AS TotalStudyHours
+SELECT subjectID, subname,(thHours+tuHours+prHours) AS TotalStudyHours
 FROM tblSubject
 ORDER BY TotalStudyHours DESC
 LIMIT 3;

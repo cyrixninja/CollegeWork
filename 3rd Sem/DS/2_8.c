@@ -1,3 +1,10 @@
+//Write a menu driven program to implement following operations on the singly linked list.
+//(a) Insert a node at the front of the linked list.
+//(b) Insert a node at the end of the linked list.
+//(c) Insert a node such that the linked list is in ascending order.(according to info. Field)
+//(d) Delete the first node of the linked list.
+//(e) Delete a node before specified position.
+//(f) Delete a node after specified position.
 #include <stdio.h>
 #include <stdlib.h>
 

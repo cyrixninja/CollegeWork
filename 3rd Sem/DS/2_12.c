@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //Write a program to implement following operations on the circular linked list.
 // (a) Insert a node at the front of the linked list.
 // (b) Insert a node at the end of the linked list.
@@ -177,8 +176,3 @@ int main() {
 
     return 0;
 }
-=======
-//Test
-
-#include <stdio.h>
->>>>>>> 8798722c00cb138a7dc9683499c7a2fc96c30793

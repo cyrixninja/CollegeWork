@@ -14,8 +14,6 @@ The assignments are written in C and can be built and run using any C compiler. 
 gcc -o output_file input_file.c
 ./output_file
 
-Sure, here's the complete README.md content in Markdown format:
-
 ```markdown
 # My Programming Assignments
 

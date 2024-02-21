@@ -12,12 +12,14 @@ public class Prac1 {
         Scanner weight_in_pounds = new Scanner(System.in);
         weight = weight_in_pounds.nextDouble();
         System.out.println("Weight in Pounds :" + weight);
+        
 
         double height;
         System.out.println("Please Enter Height in Inches");
         Scanner height_in_inches = new Scanner(System.in);
         height = height_in_inches.nextDouble();
         System.out.println("Height in Inches :" + height);
+        
 
         Double height_in_metres= height*0.0254;
         Double weight_in_kilogram = weight*0.45359237;
@@ -27,5 +29,8 @@ public class Prac1 {
         Double bmi = (weight_in_kilogram)/(height_in_metres*height_in_metres);
         System.out.println("BMI is :"+bmi);
 
+        // Closing Scanners
+        weight_in_pounds.close();
+        height_in_inches.close();
     }
 }

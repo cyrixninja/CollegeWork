@@ -10,6 +10,7 @@ public class Prac2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Integer[] numbers = new Integer[10];
+        
 
         // Prompt the user to enter 10 integers
         for (int i = 0; i < 10; i++) {
@@ -24,5 +25,7 @@ public class Prac2 {
         for (int num : numbers) {
             System.out.println(num);
         }
+
+        scanner.close();
     }
 }

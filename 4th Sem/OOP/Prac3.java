@@ -91,5 +91,8 @@ public class Prac3 {
 
         // q. Print the hashcode of string
         System.out.println("Hashcode: " + inputString.hashCode());
+
+        
+        scanner.close();
     }
 }

@@ -15,15 +15,13 @@ public class Prac4 {
         System.out.println("Constructor with parameters called. Name is set to '" + name + "'");
     }
 
-    // Finalize method (similar to a destructor in C++)
+    // Destructor
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Finalize method called for object with name '" + name + "'");
-        super.finalize();
     }
 
     public static void main(String[] args) {
-        Prac4 obj1 = new Prac4();
-        Prac4 obj2 = new Prac4("Custom");
+        new Prac4("Custom");
     }
 }

@@ -1,12 +1,13 @@
+#!/bin/bash
 # Write a shell script to read n numbers as command arguments and sort them in descending order.
 # !/bin/bash
 
 echo "Enter the number of elements: "
-read n
+read -r n
 echo "Enter the elements: "
 for ((i=0;i<n;i++))
 do
-    read arr[$i]
+    read -r arr[$i]
 done
 for ((i=0;i<n;i++))
 do

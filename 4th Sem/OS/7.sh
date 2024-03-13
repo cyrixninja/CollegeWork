@@ -1,8 +1,9 @@
+#!/bin/bash
 # Write a shell script which will generate first n fibonnacci numbers like: 1, 1, 2, 3, 5, 13, ...
-# !/bin/bash
+
 
 echo "Enter the value of n :"
-read n
+read -r n
 echo "The first $n fibonacci numbers are:"
 a=0
 b=1

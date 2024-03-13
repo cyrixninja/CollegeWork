@@ -1,8 +1,9 @@
+#!/bin/bash
 # Write a shell script which will accept a number b and display first n prime numbers as output.
-# !/bin/bash
+
 
 echo "Enter the value of n"
-read n
+read -r n
 echo "The first $n prime numbers are:"
 a=2
 count=0

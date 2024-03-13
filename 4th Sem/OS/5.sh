@@ -1,8 +1,9 @@
+#!/bin/bash
 # Write a shell script to find factorial of given number n
-# !/bin/bash
+
 
 echo "Enter a number"
-read n
+read -r n
 
 fact=1
 for((i=1;i<=n;i++))

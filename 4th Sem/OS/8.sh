@@ -1,3 +1,4 @@
+#!/bin/bash
 # Write a menu driven shell script which will print the following menu and execute the given task.
 # a. Display calendar of current month
 # b. Display today’s date and time
@@ -5,7 +6,7 @@
 # d. Display your name at given x, y position
 # e. Display your terminal number
 
-# !/bin/bash
+
 
 echo "Menu"
 echo "a. Display calendar of current month"
@@ -14,7 +15,7 @@ echo "c. Display usernames those are currently logged in the system"
 echo "d. Display your name at given x, y position"
 echo "e. Display your terminal number"
 echo "Enter your choice"
-read choice
+read -r choice
 case $choice in
 a) cal ;;
 b) date ;;

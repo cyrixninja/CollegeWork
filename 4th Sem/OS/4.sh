@@ -1,11 +1,12 @@
+#!/bin/bash
 # Write a shell script to display multiplication table of given number
-# !/bin/bash
+
 
 echo "Enter the number: "
-read n
+read -r n
 for i in {1..10}
 do
-    echo "$n * $i = $(($n*$i))"
+    echo "$n * $i = $((n*i))"
 done
 
 # Output

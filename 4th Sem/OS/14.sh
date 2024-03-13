@@ -1,5 +1,6 @@
+#!/bin/bash
 # Write a shell script to validate the entered date. (eg. Date format is : dd-mm-yyyy).
-# !/bin/bash
+
 
 echo "Enter the date in dd-mm-yyyy format: "
 read date

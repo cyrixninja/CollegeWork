@@ -20,7 +20,7 @@ This Repo Contains following practicals :
 - [] 13. Study of Unix Shell and Environment Variables.
 - [x] 14. Write a shell script to validate the entered date. (eg. Date format is : dd-mm-yyyy).
 - [] 15. Write an awk program using function, which convert each word in a given text into capital.
-- [x] 16. Write a program for process creation using C. (Use of gcc compiler).
+- [] 16. Write a program for process creation using C. (Use of gcc compiler).
 
 
 

@@ -7,30 +7,27 @@ jmp start
 
 ;code
 start: nop
+	; LDA instruction - Load accumulator direct
+	LDA 0001H ; Load accumulator with the value at memory address 0001H
 
-    	; LDA instruction - Load accumulator direct
-    	LDA 0000H ; Load accumulator with the value at memory address 0001H
+	; LXI instruction - Load immediate data into register pair
+	LXI H, 0002H ; Load immediate address of data into register pair HL (0005H)
 
-    	; LDAX instruction - Load accumulator indirect
-    	LDAX B ; Load accumulator with the value at the address pointed by register pair BC (0001H)
+	; MVI instruction - Move immediate data into a register or memory location
+    	MVI C, 0AH ; Move immediate value 0AH into register B
+	
+	; STA instruction - Store accumulator direct
+    	STA 0004H ; Store accumulator value at memory address 0002H
+	
+	; MOV instruction - Move data between registers
+	MOV  D, C ; Move contents of register C to register B
 
-    	; MOV instruction - Move data between registers
-    	MOV A, B ; Move contents of register B to register A
+	; LDAX instruction - Load accumulator indirect
+	LDAX B ; Load accumulator with the value at the address pointed by register pair BC (0AH)
 
-    	; MVI instruction - Move immediate data into a register or memory location
-    	MVI B, 0AH ; Move immediate value 0AH into register B
-
-    	; LXI instruction - Load immediate data into register pair
-    	LXI H, 0005H ; Load immediate address of data into register pair HL (0005H)
-
-    	; LDA instruction - Load accumulator direct
-    	LDA 0001H ; Load accumulator with the value at memory address 0001H
-
-    	; STA instruction - Store accumulator direct
-    	STA 0002H ; Store accumulator value at memory address 0002H
-
-    	; STAX instruction - Store accumulator indirect
-    	STAX B ; Store accumulator value at the address pointed by register pair DE
-
-
+	; STAX instruction - Store accumulator indirect
+	LXI B, 0007H;
+	MVI A, 0AH ;
+	STAX B ;
+	
 hlt

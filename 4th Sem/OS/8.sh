@@ -21,12 +21,16 @@ a) cal ;;
 b) date ;;
 c) who ;;
 d) echo "Enter x and y position"
-read x y
-tput cup $x $y
-echo "Your name" ;;
+	read x y
+	tput cup $x $y
+	echo "Enter your name"
+	read name
+	tput cup $x $y
+	echo "$name" ;;
 e) tty ;;
 *) echo "Invalid choice" ;;
 esac
+
 # Output
 # Menu
 # a. Display calendar of current month

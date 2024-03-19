@@ -21,9 +21,9 @@ AGAIN: 	ADD C; Add C
 	STA 0000H; Store Result at 000H
 	
 	; b)Addition of any 10 Numbers stored in memory
-	LDA 0001H; Set the Size of Array at 0001H location
+	MVI A,0AH; Set the Size of the Array
 	MOV B, A; Transfer Value of A to B
-	LXI H , 0002H; Load First Number of Array into HL Pair
+	LXI H , 0001H; Load First Number of Array into HL Pair
 	MVI A ,00; Intialise A Register with 0
 	MVI C, 00; Intialise C Register with 0
 ADDLOOP1:	ADD M; A <- A + M
@@ -33,37 +33,28 @@ ADDLOOP1:	ADD M; A <- A + M
 
 ADDLOOP2:	DCR B; B <- B-1
 		JNZ ADDLOOP1; Jump to ADDLOOP1
-		STA 0008H; Store Result at 000E Location
+		STA 000BH; Store Result at 000E Location
 		MOV A,C; Transfer Value of Carry to A
-		STA 0009H; Store Carry Result at 000F Location
+		STA 000CH; Store Carry Result at 000F Location
 
 	
 	; c)Count Even and Odd Numbers (10 Numbers)
-	LXI H, 0002H; Load First Number of Array into HL Pair
+	LXI H, 0001H; Load First Number of Array into HL Pair
 	MVI C,00H; Initialize Carry Register with 0
-	MVI D,06H; Set the Size of the Array
-COUNTODD2:	INX H; Increment Indirect memory location M by 01
+	MVI D,0AH; Set the Size of the Array
+COUNT2:		INX H; Increment Indirect memory location M by 01
 		MOV A, M; Transfer Contents of Memory Location M (0002H) to Accumulator
 		ANI 01;Perform AND Operation between Contents of Accumulator and 01
-		JNZ COUNTODD1; JUMP to COUNTODD1
+		JZ COUNT1; JUMP to COUNTODD1
 		INR C; Increase Value of Carry
 
-COUNTODD1:	DCR D; Decrease Value of D Register
-		JNZ COUNTODD2;JUMP to COUNTODD2
+COUNT1:		DCR D; Decrease Value of D Register
+		JNZ COUNT2;JUMP to COUNTODD2
 		MOV A,C; Move Contents of C to Accumulator
-		STA 0018H; Store Contents of Accumulator at Location 0018H;
-	LXI H, 0002H; Load First Number of Array into HL Pair
-	MVI C,00H; Initialize Carry Register with 0
-	MVI D,06H; Set the Size of the Array
-COUNTEVEN2:	INX H; Increment Indirect memory location M by 01.
-		MOV A, M; Transfer Contents of Memory Location M (0002H) to Accumulator
-		ANI 01;Perform AND Operation between Contents of Accumulator and 01
-		JZ COUNTEVEN1; JUMP to COUNTEVEN1
-		INR C; Increase Value of Carry
-COUNTEVEN1:	DCR D; Decrease Value of D Register
-		JNZ COUNTEVEN2;JUMP to COUNTEVEN2
-		MOV A,C; Move Contents of C to Accumulator
-		STA 0019H; Store Contents of Accumulator at Location 0019H;
+		STA 000DH; Store Contents of Accumulator at Location 0018H (Odd Numbers);
+		MVI A,0AH; Initialize Accumulator with Value of Total Number of Elements
+		SUB C; Subract Number of Odd Numbers to Numbers to Find Total Number of Even Numbers
+		STA 000EH;  Store Contents of Accumulator at Location 0018H (Even Numbers);
 
 	 			 
 

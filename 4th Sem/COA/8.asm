@@ -9,7 +9,7 @@ jmp start
 
 ;code
 start: nop
-	MVI B,03; Take Value in Register B
+	MVI B,05; Take Value in Register B
 	MOV C,B; Move B into C
 	DCR B; Decrement Register B
 LOOP1:	MOV D,B; Move B into D

@@ -1,4 +1,4 @@
-# Implementation and Time analysis of Sorting Algorithms: Selection Sort
+# Implementation and Time analysis of Sorting Algorithms: Insertion Sort
 
 #Importing Time Module for Execution Time Analysis
 import time
@@ -14,18 +14,19 @@ arr = []
 for i in range(n):
     arr.append(int(input("Enter the element: ")))
 
-# Sorting the Array using Selection Sort
-for i in range(n):
-    min_index = i
-    for j in range(i+1, n):
-        if arr[j] < arr[min_index]:
-            min_index = j
-    arr[i], arr[min_index] = arr[min_index], arr[i]
+# Sorting the Array using Insertion Sort
+for i in range(1, n):
+    key = arr[i]
+    j = i - 1
+    while j >= 0 and key < arr[j]:
+        arr[j + 1] = arr[j]
+        j -= 1
+    arr[j + 1] = key
 
 # Printing the Sorted Array
 print("The Sorted Array is: ", arr)
 
-# record end time
+# Record end time
 end = time.time()
 
 # Print the Execution Time

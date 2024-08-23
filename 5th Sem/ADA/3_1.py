@@ -40,3 +40,10 @@ def knapsack(n, values, weights, maxweight):
 
 # Printing the Maximum Value of the Knapsack
 print("The Maximum Value of the Knapsack is: ", knapsack(n, values, weights, maxweight))
+
+
+# record end time
+end = time.time()
+
+# Print the Execution Time
+print("The time of execution of above program is :",(end-start) * 10**3, "ms")

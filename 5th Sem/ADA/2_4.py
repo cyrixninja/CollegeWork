@@ -1,4 +1,4 @@
-# Implmentation and Time Analysis of Quick Sort
+# Implementation and Time Analysis of Quick Sort
 
 #Importing Time Module for Execution Time Analysis
 import time

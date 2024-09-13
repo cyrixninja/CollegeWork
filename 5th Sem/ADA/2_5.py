@@ -1,4 +1,4 @@
-# Implmentation and Time Analysis of Max-Heap Sort
+# Implementation and Time Analysis of Max-Heap Sort
 
 #Importing Time Module for Execution Time Analysis
 import time

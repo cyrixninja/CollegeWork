@@ -1,4 +1,4 @@
-# Implmentation and Time Analysis of Merge Sort
+# Implementation and Time Analysis of Merge Sort
 
 #Importing Time Module for Execution Time Analysis
 import time

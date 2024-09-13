@@ -1,4 +1,4 @@
-# Implmentation and Time Analysis of Linear Search Algorithm
+# Implementation and Time Analysis of Linear Search Algorithm
 
 #Importing Time Module for Execution Time Analysis
 import time

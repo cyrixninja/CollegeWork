@@ -1,4 +1,4 @@
-# Implmentation and Time Analysis of Binary Search Algorithm
+# Implementation and Time Analysis of Binary Search Algorithm
 
 #Importing Time Module for Execution Time Analysis
 import time

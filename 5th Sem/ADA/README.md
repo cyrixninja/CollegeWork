@@ -18,9 +18,7 @@
 ## 3
 
 - [x] 3.1 Implementation of a knapsack problem using dynamic programming
-- [ ] 3.2 Implementation of chain matrix multiplication using dynamic programming
-- [ ] 3.3 Implementation of making a change problem using dynamic programming
-- [ ] 3.4 Implement LCS problem
+- [x] 3.3 Implementation of making a change problem using dynamic programming
 - [x] 3.5 Implementation of a Knapsack problem using greedy algorithm
 - [x] 3.6 Implement Prim’s algorithm
 - [x] 3.7 Implement Kruskal’s algorithm.

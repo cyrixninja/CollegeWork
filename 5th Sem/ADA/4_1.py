@@ -1,4 +1,9 @@
 # Implementation of Graph and Searching : Breadth First Search
+#Importing Time Module for Execution Time Analysis
+import time
+
+# Record start time
+start = time.time()
 
 def bfs(graph, start):
     visited = []
@@ -30,3 +35,9 @@ def main():
 
 
 main()
+
+# record end time
+end = time.time()
+
+# Print the Execution Time
+print("The time of execution of above program is :",(end-start) * 10**3, "ms")

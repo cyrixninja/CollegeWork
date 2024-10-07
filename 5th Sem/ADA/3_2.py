@@ -1,4 +1,9 @@
 # Implementation of chain matrix multiplication using dynamic programming.
+#Importing Time Module for Execution Time Analysis
+import time
+
+# Record start time
+start = time.time()
 
 def chainMatrixMultiplication(dimensions):
     n = len(dimensions) - 1
@@ -15,3 +20,9 @@ def chainMatrixMultiplication(dimensions):
 dimensions = [30, 35, 15, 5, 10]
 minimum_multiplications = chainMatrixMultiplication(dimensions)
 print("Minimum number of scalar multiplications:", minimum_multiplications)
+
+# record end time
+end = time.time()
+
+# Print the Execution Time
+print("The time of execution of above program is :",(end-start) * 10**3, "ms")

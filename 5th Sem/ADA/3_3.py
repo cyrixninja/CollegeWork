@@ -1,5 +1,12 @@
 #Implementation of making a change problem using dynamic programming
 
+#Importing Time Module for Execution Time Analysis
+import time
+
+# Record start time
+start = time.time()
+
+
 def making_change(coins, amount):
     n = len(coins)
     dp = [0] + [float('inf')]*amount
@@ -17,3 +24,9 @@ print("Amout of Coins Required : " +  str(making_change(coins, amount)))
 coins1 = [1, 2 , 5]
 amount1 = 8
 print("Amout of Coins Required : " +  str(making_change(coins1, amount1)))
+
+# record end time
+end = time.time()
+
+# Print the Execution Time
+print("The time of execution of above program is :",(end-start) * 10**3, "ms")

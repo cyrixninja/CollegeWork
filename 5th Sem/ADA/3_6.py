@@ -1,4 +1,11 @@
 # Implement Prim’s algorithm
+
+#Importing Time Module for Execution Time Analysis
+import time
+
+# Record start time
+start = time.time()
+
 def prims_algorithm(graph):
     n = len(graph)
     mst = [False] * n
@@ -19,3 +26,9 @@ def prims_algorithm(graph):
 graph = [[0, 2, 0, 6, 0], [2, 0, 3, 8, 5], [0, 3, 0, 0, 7], [6, 8, 0, 0, 9], [0, 5, 7, 9, 0]]
 
 prims_algorithm(graph)
+
+# record end time
+end = time.time()
+
+# Print the Execution Time
+print("The time of execution of above program is :",(end-start) * 10**3, "ms")

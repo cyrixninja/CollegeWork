@@ -1,5 +1,11 @@
 # Implement LCS problem.
 
+#Importing Time Module for Execution Time Analysis
+import time
+
+# Record start time
+start = time.time()
+
 def lcs(X, Y):
     x = len(X)
     y = len(Y)
@@ -36,3 +42,9 @@ lcs(X, Y)
 X = "ABCDGH"
 Y = "AEDFHR"
 lcs(X, Y)
+
+# record end time
+end = time.time()
+
+# Print the Execution Time
+print("The time of execution of above program is :",(end-start) * 10**3, "ms")

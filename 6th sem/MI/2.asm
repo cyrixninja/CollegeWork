@@ -39,13 +39,13 @@
 	;STA 0005H; Store Value at Accumulator at 0005H
 		
 ;4 . 20H and ABH are stored at memory locations. Swap the values of them. (Using XCHG)
-	LXI H , 0007H; 
-	MOV D , M ; M --> D 
-	LXI H , 0008H; 
-	MOV H , M ;
-	XCHG
-	MOV M, D ; 
-	;MOV M , D;
-		
+	;LXI H, 0007H; Point to 0007H;
+	;LXI D, 0008H; Point to 0008H
+	;MOV A, M ; M --> A
+	;XCHG ; Swap HL and DE Pair
+	;MOV B, M ; M --> B
+	;MOV M ,A ; A --> M 
+	;XCHG ; Swap HL and DE Pair
+	;MOV M,B; B --> M
 
-	HLT ; Halt the Program
+	;HLT ; Halt the Program

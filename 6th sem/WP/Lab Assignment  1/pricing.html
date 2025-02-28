@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .pricing-header {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .plan-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .basic .plan-name {
+            color: #004884;
+        }
+        
+        .standard .plan-name {
+            color: #00843d;
+        }
+        
+        .premium .plan-name {
+            color: #e91e63;
+        }
+        
+        .price-tag {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 0 0 20px 0;
+            display: inline-block;
+        }
+        
+        .basic .price-tag {
+            background-color: #004884;
+        }
+        
+        .standard .price-tag {
+            background-color: #00843d;
+        }
+        
+        .premium .price-tag {
+            background-color: #e91e63;
+        }
+        
+        .features {
+            padding: 20px;
+            list-style-type: none;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .icon {
+            margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .icon-check {
+            color: green;
+        }
+        
+        .icon-cross {
+            color: red;
+        }
+        
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 12px 20px;
+            margin: 0 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .basic .btn {
+            color: #004884;
+            border: 2px solid #004884;
+        }
+        
+        .basic .btn:hover {
+            background-color: #004884;
+            color: white;
+        }
+        
+        .standard .btn {
+            color: #00843d;
+            border: 2px solid #00843d;
+        }
+        
+        .standard .btn:hover {
+            background-color: #00843d;
+            color: white;
+        }
+        
+        .premium .btn {
+            color: #e91e63;
+            border: 2px solid #e91e63;
+        }
+        
+        .premium .btn:hover {
+            background-color: #e91e63;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <!-- Basic Plan -->
+        <div class="pricing-card basic">
+            <div class="pricing-header">
+                <div class="plan-name">Basic</div>
+                <div class="price-tag">$2.99</div>
+            </div>
+            <ul class="features">
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Sample Text Here</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Other Text Title</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-cross">✗</span>
+                    <span>Text Space Goes Here</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-cross">✗</span>
+                    <span>Description Space</span>
+                </li>
+            </ul>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="pricing-card standard">
+            <div class="pricing-header">
+                <div class="plan-name">Standard</div>
+                <div class="price-tag">$5.99</div>
+            </div>
+            <ul class="features">
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Sample Text Here</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Other Text Title</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-cross">✗</span>
+                    <span>Text Space Goes Here</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-cross">✗</span>
+                    <span>Description Space</span>
+                </li>
+            </ul>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="pricing-card premium">
+            <div class="pricing-header">
+                <div class="plan-name">Premium</div>
+                <div class="price-tag">$9.99</div>
+            </div>
+            <ul class="features">
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Sample Text Here</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Other Text Title</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Text Space Goes Here</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon icon-check">✓</span>
+                    <span>Description Space</span>
+                </li>
+            </ul>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+</body>
+</html>

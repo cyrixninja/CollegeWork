@@ -1,18 +1,18 @@
 ;Find the minimum from two 8-bit numbers. 
 
-;	LXI H , 0001H;
-;	MOV A , M ; 0001H -> A
-;	INX H ; Point to 0002H
-;	MOV B , M ; 0002H -> B
-;	CMP B ; Compare with B
-;	JC MIN
-;	INX H
-;	MOV M , B
-;	HLT
+	LXI H , 0001H;
+	MOV A , M ; 0001H -> A
+	INX H ; Point to 0002H
+	MOV B , M ; 0002H -> B
+	CMP B ; Compare with B
+	JC MIN
+	INX H
+	MOV M , B
+	HLT
 
-;MIN:	INX H
-;	MOV M , A 
-;	HLT
+MIN:	INX H
+	MOV M , A 
+	HLT
 
 
 
@@ -27,8 +27,8 @@ LOOP1:	INX H ; Increase HL Pointer
 	CMP M ; Compare with Memory
 	DCR C ; Decrease Counter
 	JZ STORE ; Store if Loop Completed
-	JC LOOP2; If Number is Minimum Jump to LOOP2
-	JMP LOOP1 
+	JC LOOP2; If the Number is less than than the one is memory then jump to LOOP2
+	JMP LOOP1
 
 
 LOOP2:	MOV B , A;
@@ -49,8 +49,8 @@ LOOP1:	INX H ; Increase HL Pointer
 	CMP M ; Compare with Memory
 	DCR C ; Decrease Counter
 	JZ STORE ; Store if Loop Completed
-	JNC LOOP2; If Number is Minimum Jump to LOOP2
-	JMP LOOP1 
+	JNC LOOP2;  If the Number is more than than the one is memory then jump to LOOP2
+	JMP LOOP1 ;
 
 
 LOOP2:	MOV B , A;

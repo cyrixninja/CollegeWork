@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Program </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .success {
+            border-color: #2ecc71 !important;
+        }
+        .error {
+            border-color: #e74c3c !important;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .submit-message {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .submit-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .submit-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="validationForm" novalidate>
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name" class="required">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Firstname Middle name Lastname">
+                <div id="nameError" class="error-message">Please enter your full name (Firstname Middle name Lastname)</div>
+            </div>
+
+            <!-- Address Field -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address">
+                <div id="addressError" class="error-message">Address can only contain letters, numbers, and commas</div>
+            </div>
+
+            <!-- Phone Field -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your mobile or landline number">
+                <div id="phoneError" class="error-message">Please enter a valid Indian mobile or landline number</div>
+            </div>
+
+            <!-- Domain Field -->
+            <div class="form-group">
+                <label for="domain" class="required">Domain</label>
+                <input type="text" id="domain" name="domain" placeholder="example.com">
+                <div id="domainError" class="error-message">Please enter a valid domain name</div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email" class="required">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="youremail@domain.com">
+                <div id="emailError" class="error-message">Please enter a valid email with matching domain</div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password" class="required">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <div id="passwordError" class="error-message">Password must be at least 8 characters with 1 uppercase letter, 1 number, and 1 special character</div>
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="form-group">
+                <label for="confirmPassword" class="required">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                <div id="confirmPasswordError" class="error-message">Passwords do not match</div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Submit</button>
+            </div>
+
+            <div id="submitMessage" class="submit-message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('validationForm');
+            
+            document.getElementById('name').addEventListener('input', validateName);
+            document.getElementById('address').addEventListener('input', validateAddress);
+            document.getElementById('phone').addEventListener('input', validatePhone);
+            document.getElementById('domain').addEventListener('input', validateDomain);
+            document.getElementById('email').addEventListener('input', validateEmail);
+            document.getElementById('password').addEventListener('input', validatePassword);
+            document.getElementById('confirmPassword').addEventListener('input', validateConfirmPassword);
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const isNameValid = validateName();
+                const isAddressValid = validateAddress();
+                const isPhoneValid = validatePhone();
+                const isDomainValid = validateDomain();
+                const isEmailValid = validateEmail();
+                const isPasswordValid = validatePassword();
+                const isConfirmPasswordValid = validateConfirmPassword();
+                
+                const allValid = isNameValid && isDomainValid && isEmailValid && 
+                                isPasswordValid && isConfirmPasswordValid;
+                
+                const addressField = document.getElementById('address');
+                const phoneField = document.getElementById('phone');
+                const optionalFieldsValid = 
+                    (addressField.value === '' || isAddressValid) && 
+                    (phoneField.value === '' || isPhoneValid);
+                
+                if (allValid && optionalFieldsValid) {
+                    const submitMessage = document.getElementById('submitMessage');
+                    submitMessage.textContent = "Form submitted successfully!";
+                    submitMessage.className = "submit-message submit-success";
+                    submitMessage.style.display = "block";
+                } else {
+                    const submitMessage = document.getElementById('submitMessage');
+                    submitMessage.textContent = "Please fix the errors before submitting.";
+                    submitMessage.className = "submit-message submit-error";
+                    submitMessage.style.display = "block";
+                    
+                    validateName();
+                    validateAddress();
+                    validatePhone();
+                    validateDomain();
+                    validateEmail();
+                    validatePassword();
+                    validateConfirmPassword();
+                }
+            });
+            
+            function validateName() {
+                const nameField = document.getElementById('name');
+                const errorField = document.getElementById('nameError');
+                const namePattern = /^[A-Za-z]+ [A-Za-z]+ [A-Za-z]+$/;
+                
+                if (nameField.value.trim() === '') {
+                    showError(nameField, errorField, 'Name is required');
+                    return false;
+                } else if (!namePattern.test(nameField.value)) {
+                    showError(nameField, errorField, 'Please enter Firstname Middle name Lastname');
+                    return false;
+                } else {
+                    showSuccess(nameField, errorField);
+                    return true;
+                }
+            }
+            
+            function validateAddress() {
+                const addressField = document.getElementById('address');
+                const errorField = document.getElementById('addressError');
+                const addressPattern = /^[a-zA-Z0-9, ]*$/;
+                
+                if (addressField.value.trim() === '') {
+                    addressField.classList.remove('error', 'success');
+                    errorField.style.display = 'none';
+                    return true;
+                } else if (!addressPattern.test(addressField.value)) {
+                    showError(addressField, errorField, 'Address can only contain letters, numbers, and commas');
+                    return false;
+                } else {
+                    showSuccess(addressField, errorField);
+                    return true;
+                }
+            }
+            
+            function validatePhone() {
+                const phoneField = document.getElementById('phone');
+                const errorField = document.getElementById('phoneError');
+                const mobilePattern = /^[6-9]\d{9}$/;
+                const landlinePattern = /^0\d{2,4}[-\s]?\d{6,8}$/;
+                
+                if (phoneField.value.trim() === '') {
+                    phoneField.classList.remove('error', 'success');
+                    errorField.style.display = 'none';
+                    return true;
+                } else if (!mobilePattern.test(phoneField.value) && !landlinePattern.test(phoneField.value)) {
+                    showError(phoneField, errorField, 'Please enter a valid Indian mobile or landline number');
+                    return false;
+                } else {
+                    showSuccess(phoneField, errorField);
+                    return true;
+                }
+            }
+            
+            function validateDomain() {
+                const domainField = document.getElementById('domain');
+                const errorField = document.getElementById('domainError');
+                const domainPattern = /^([a-zA-Z0-9]+([a-zA-Z0-9-]*[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/;
+                
+                if (domainField.value.trim() === '') {
+                    showError(domainField, errorField, 'Domain is required');
+                    return false;
+                } else if (!domainPattern.test(domainField.value)) {
+                    showError(domainField, errorField, 'Please enter a valid domain name');
+                    return false;
+                } else {
+                    showSuccess(domainField, errorField);
+                    return true;
+                }
+            }
+            
+            function validateEmail() {
+                const emailField = document.getElementById('email');
+                const domainField = document.getElementById('domain');
+                const errorField = document.getElementById('emailError');
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                
+                if (emailField.value.trim() === '') {
+                    showError(emailField, errorField, 'Email is required');
+                    return false;
+                } else if (!emailPattern.test(emailField.value)) {
+                    showError(emailField, errorField, 'Please enter a valid email address');
+                    return false;
+                } else {
+                    const emailDomain = emailField.value.split('@')[1];
+                    if (domainField.value.trim() !== '' && emailDomain !== domainField.value.trim()) {
+                        showError(emailField, errorField, 'Email domain must match the domain field');
+                        return false;
+                    } else {
+                        showSuccess(emailField, errorField);
+                        return true;
+                    }
+                }
+            }
+            
+            function validatePassword() {
+                const passwordField = document.getElementById('password');
+                const errorField = document.getElementById('passwordError');
+                const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,}$/;
+                
+                if (passwordField.value === '') {
+                    showError(passwordField, errorField, 'Password is required');
+                    return false;
+                } else if (!passwordPattern.test(passwordField.value)) {
+                    showError(passwordField, errorField, 'Password must be at least 8 characters with 1 uppercase letter, 1 number, and 1 special character');
+                    return false;
+                } else {
+                    showSuccess(passwordField, errorField);
+                    return true;
+                }
+            }
+            
+            function validateConfirmPassword() {
+                const confirmField = document.getElementById('confirmPassword');
+                const passwordField = document.getElementById('password');
+                const errorField = document.getElementById('confirmPasswordError');
+                
+                if (confirmField.value === '') {
+                    showError(confirmField, errorField, 'Please confirm your password');
+                    return false;
+                } else if (confirmField.value !== passwordField.value) {
+                    showError(confirmField, errorField, 'Passwords do not match');
+                    return false;
+                } else {
+                    showSuccess(confirmField, errorField);
+                    return true;
+                }
+            }
+        
+            function showError(field, errorElement, message) {
+                field.classList.add('error');
+                field.classList.remove('success');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+            
+            function showSuccess(field, errorElement) {
+                field.classList.add('success');
+                field.classList.remove('error');
+                errorElement.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

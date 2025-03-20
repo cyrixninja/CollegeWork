@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Domain Validator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .valid {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .invalid {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Domain Validator</h1>
+        
+        <h2>Test the Function</h2>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" placeholder="Enter an email address">
+        </div>
+        
+        <div class="form-group">
+            <label for="domains">Allowed Domains (one per line):</label>
+            <textarea id="domains" rows="4" placeholder="gmail.com&#10;yahoo.com&#10;ckpcet.ac.in">gmail.com
+yahoo.com
+ckpcet.ac.in
+outlook.com</textarea>
+        </div>
+        
+        <button onclick="testValidation()">Validate Email</button>
+        
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+
+    <script>
+
+
+        function validateEmail(email, domains) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+            const match = email.match(emailPattern);
+            if (!match) {
+                return false;
+            }
+            const emailDomain = match[1];
+            return domains.includes(emailDomain);
+        }
+        
+        function testValidation() {
+            const emailInput = document.getElementById('email').value.trim();
+            const domainsInput = document.getElementById('domains').value.trim();
+            const domains = domainsInput.split('\n')
+                            .map(domain => domain.trim())
+                            .filter(domain => domain.length > 0);
+            
+            const resultDiv = document.getElementById('result');
+            const isValid = validateEmail(emailInput, domains);
+            
+            resultDiv.style.display = 'block';
+            if (isValid) {
+                resultDiv.className = 'result valid';
+                resultDiv.innerHTML = `<strong>Valid Email:</strong> The email "${emailInput}" is valid and its domain is in the allowed list.`;
+            } else {
+                resultDiv.className = 'result invalid';
+                if (!emailInput.includes('@') || !emailInput.includes('.')) {
+                    resultDiv.innerHTML = `<strong>Invalid Email Format:</strong> "${emailInput}" is not a valid email address.`;
+                } else {
+                    const domain = emailInput.split('@')[1];
+                    resultDiv.innerHTML = `<strong>Invalid Domain:</strong> The domain "${domain}" is not in the allowed list.`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
